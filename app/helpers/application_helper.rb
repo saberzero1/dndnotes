@@ -40,7 +40,7 @@ module ApplicationHelper
     layout = layout.to_s
     layout = "layouts/#{layout}" unless layout.include?('/')
     @view_flow.get(:layout).replace capture(&block)
-    render file: layout
+    render template: layout
   end
 
   def flash_class(key)

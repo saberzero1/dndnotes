@@ -65,16 +65,16 @@
     </div>
   </section>
 
-  <section class="action-col">
-    <%= render 'categories/button_new' %>
-  </section>
-
-  <section class="main-col col-md">
-    <div class="home-cards card-columns">
+  <section class="main-col col-md-9">
+    <div class="home-cards card-columns d-flex align-content-start flex-wrap">
       <% @workspace.categories.order(name: :asc).each do |category| %>
         <%= render 'categories/index_card', category: category, notes: category.notes.order(updated_at: :desc).first(5) %>
       <% end %>
     </div>
+  </section>
+
+  <section class="action-col">
+    <%= render 'categories/button_new' %>
   </section>
 </div>
 
